@@ -1,0 +1,31 @@
+<div id="status" style="height:10%; width:100%">Fingers</div>
+<div id="finger" style="height: 90%; width: 100%"></div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+
+<script>
+window.onload = function() {
+
+	
+	var lpc_req = new Request.HTML({
+		url:"/finger/volothamp",
+		method: "get",
+		onRequest: function() {
+			$('status').set('text', 'Finger in 5 seconds...');
+		},
+		onComplete: function(response) {
+			$('finger').adopt(response);
+			$('status').set('text', "Loading complete.");
+		}
+	});
+
+var doMany = function() {
+	lpc_req.send();
+};
+
+doMany.delay(5000);
+};
+
+</script>
+
+
+<img src="http://fr.hyssing.net/dev/s_play/maps/dendall.png" />

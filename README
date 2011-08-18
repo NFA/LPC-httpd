@@ -1,0 +1,11 @@
+Web server written in LPC for the FluffOS driver
+
+Goal:
+Serve both static and dynamic pages
+Dynamic pages using a Django-esque approach
+Basic-Auth & Digest-Auth with external bindings to custom LPC daemons
+WebDAV support
+
+Optional:
+Support for binary data in http response using buffer datatype or base64 encodings
+
